@@ -9,7 +9,7 @@ The Product Management API is a Spring Boot-based RESTful service designed to in
 1. List Products by Category: Fetch product details based on the provided category detail.
 2. Add New Product: Add a new product to the FakeStore database using POST requests.
    
-## Technologies Used
+## Tech Stack
 - Java
 - Spring Boot
 - RestTemplate for API calls
