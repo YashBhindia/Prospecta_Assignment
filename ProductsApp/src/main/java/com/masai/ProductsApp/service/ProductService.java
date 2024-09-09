@@ -20,7 +20,7 @@ public class ProductService {
     }
 
     public List<Product> getProductsByCategory(String category) {
-        // Replace with actual URL
+        
         String url = "https://fakestoreapi.com/products/category/" + category;
 
         Product[] products = restTemplate.getForObject(url, Product[].class);
@@ -31,15 +31,12 @@ public class ProductService {
     public Product addProduct(Product product) {
         String url = "https://fakestoreapi.com/products";
 
-        // Set the appropriate headers
         HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json");
 
-        // Create the request entity with the product object and headers
         HttpEntity<Product> requestEntity = new HttpEntity<>(product, headers);
 
         try {
-            // Send the POST request to the FakeStore API
             ResponseEntity<Product> response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, Product.class);
             return response.getBody();
         } catch (RestClientException e) {
